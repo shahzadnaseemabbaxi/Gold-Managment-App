@@ -1,0 +1,126 @@
+/* .header {
+    background: rgb(0, 255, 55);
+} */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-logo span {
+  font-size: 20px;
+  font-weight: 700;
+  color: #d4af37;
+}
+
+.brand-logo a {
+    font-size: 2rem;
+    font-weight: 600;
+}
+.search {
+  width: 30rem;
+}
+.bi-list {
+  font-size: 25px;
+}
+
+.form-control {
+  border-radius: 15px;
+}
+.btn {
+  border-radius: 15px;
+}
+
+.line {
+  display: inline-block;
+  height: 30px;
+  border-left: 2px solid #ccc;
+}
+.bi-person-circle {
+  font-size: 30px;
+}
+
+.add-item-btn  {
+  background-color: #ffc107;
+  border: none;
+  padding: 5px 22px;
+  border-radius: 18px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.add-item-btn:hover {
+  background-color: #b8941f;
+}
+.add-item-btn i {
+  margin-right: 6px;
+}
+
+.bi-bell {
+  font-size: 22px;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+
+/* 1200px se choti */
+@media (max-width: 1200px) {
+
+  .add-item-btn {
+    width: 100px;
+    height: 42px;
+    padding: 0 15px;
+    font-size: 14px;
+  }
+
+}
+
+
+/* 992px se choti */
+@media (max-width: 992px) {
+
+  .add-item-btn {
+    width: 90px;
+    height: 40px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+
+}
+
+
+/* 768px se choti */
+@media (max-width: 768px) {
+
+  .add-item-btn {
+    width: 80px;
+    height: 37px;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+
+}
+
+
+/* 480px se choti */
+@media (max-width: 480px) {
+
+  .add-item-btn {
+    width: 70px;
+    height: 34px;
+    padding: 0 8px;
+    font-size: 11px;
+    border-radius: 12px;
+  }
+
+}

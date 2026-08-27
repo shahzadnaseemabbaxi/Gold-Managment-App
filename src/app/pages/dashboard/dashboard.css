@@ -1,0 +1,232 @@
+.dashboard {
+  padding: 25px;
+  background: #f5f6f8;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Header */
+
+.dashboard-header {
+  /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    margin-inline-start: 15rem; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 25px;
+  margin-inline-start: 15rem;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #1f2937;
+}
+
+.dashboard-header p {
+  margin: 5px 0 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.date {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Cards */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 25px;
+  margin-inline-start: 15rem;
+}
+
+.card {
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  border: 1px solid #e5e7eb;
+}
+
+.card-icon {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff8df;
+
+  border-radius: 10px;
+
+  font-size: 24px;
+}
+
+.card p {
+  margin: 0 0 5px;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+.card h2 {
+  margin: 0;
+
+  color: #1f2937;
+
+  font-size: 20px;
+}
+
+/* Bottom Grid */
+
+.dashboard-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+  margin-inline-start: 15rem;
+}
+
+/* Panel */
+
+.panel {
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 10px;
+
+  padding: 20px;
+}
+
+.panel-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 15px;
+}
+
+.panel-header h3 {
+  margin: 0;
+
+  font-size: 17px;
+
+  color: #1f2937;
+}
+
+.panel-header span {
+  font-size: 12px;
+
+  color: #9ca3af;
+}
+
+.panel-header a {
+  text-decoration: none;
+
+  color: #c49b24;
+
+  font-size: 13px;
+}
+
+/* Gold Rate */
+
+.gold-rate {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.gold-rate:last-child {
+  border-bottom: none;
+}
+
+.gold-rate span {
+  color: #4b5563;
+
+  font-size: 14px;
+}
+
+.gold-rate strong {
+  color: #b8860b;
+
+  font-size: 14px;
+}
+
+/* Recent Sales */
+
+.sale {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 13px 0;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.sale:last-child {
+  border-bottom: none;
+}
+
+.sale div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.sale strong {
+  font-size: 14px;
+
+  color: #1f2937;
+}
+
+.sale small {
+  font-size: 12px;
+
+  color: #9ca3af;
+}
+
+.sale > span {
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #16a34a;
+}
+
+@media (max-width: 1000px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
