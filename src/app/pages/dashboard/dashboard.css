@@ -8,17 +8,11 @@
 /* Header */
 
 .dashboard-header {
-  /* display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-    margin-inline-start: 15rem; */
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   margin-bottom: 25px;
-  margin-inline-start: 15rem;
 }
 
 .dashboard-header h1 {
@@ -45,7 +39,6 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin-bottom: 25px;
-  margin-inline-start: 15rem;
 }
 
 .card {
@@ -102,7 +95,6 @@
   grid-template-columns: 1fr 1fr;
 
   gap: 20px;
-  margin-inline-start: 15rem;
 }
 
 /* Panel */

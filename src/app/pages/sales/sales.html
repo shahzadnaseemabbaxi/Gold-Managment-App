@@ -1,1 +1,376 @@
-<p>sales works!</p>
+<div class="sales-page">
+
+  <!-- Page Header -->
+  <div class="page-header">
+
+    <div>
+      <h1>Sales</h1>
+
+      <div class="breadcrumb">
+        <span>Dashboard</span>
+        <i class="bi bi-chevron-right"></i>
+        <span class="active">Sales</span>
+      </div>
+    </div>
+
+    <button class="new-sale-btn" (click)="resetForm()">
+      <i class="bi bi-plus-lg"></i>
+      New Sale
+    </button>
+
+  </div>
+
+
+  <!-- Top Section -->
+  <div class="top-section">
+
+    <!-- Create Sale -->
+    <div class="sale-card">
+
+      <h2>Create New Sale</h2>
+
+      <div class="form-grid">
+
+        <!-- Customer -->
+        <div class="form-group">
+          <label>Customer</label>
+
+          <select [(ngModel)]="sale.customer">
+            <option value="">Select Customer</option>
+            <option value="Ali Raza">Ali Raza</option>
+            <option value="Fatima Khan">Fatima Khan</option>
+            <option value="Hassan Ali">Hassan Ali</option>
+            <option value="Ahmed Shah">Ahmed Shah</option>
+          </select>
+        </div>
+
+
+        <!-- Date -->
+        <div class="form-group">
+          <label>Date</label>
+
+          <div class="input-icon">
+            <input
+              type="date"
+              [(ngModel)]="sale.date">
+          </div>
+        </div>
+
+
+        <!-- Payment -->
+        <div class="form-group">
+          <label>Payment Type</label>
+
+          <select [(ngModel)]="sale.paymentType">
+            <option value="">Select Payment Type</option>
+            <option value="Cash">Cash</option>
+            <option value="Card">Card</option>
+            <option value="Bank Transfer">Bank Transfer</option>
+          </select>
+        </div>
+
+
+        <!-- Sales Person -->
+        <div class="form-group">
+          <label>Sales Person</label>
+
+          <select [(ngModel)]="sale.salesPerson">
+            <option value="Admin User">Admin User</option>
+            <option value="Sales Person 1">Sales Person 1</option>
+            <option value="Sales Person 2">Sales Person 2</option>
+          </select>
+        </div>
+
+
+        <!-- Product -->
+        <div class="form-group">
+          <label>Product</label>
+
+          <select
+            [(ngModel)]="sale.product"
+            (change)="calculateTotal()">
+
+            <option value="">Select Product</option>
+            <option value="Gold Ring">Gold Ring</option>
+            <option value="Gold Chain">Gold Chain</option>
+            <option value="Gold Bracelet">Gold Bracelet</option>
+            <option value="Gold Necklace">Gold Necklace</option>
+
+          </select>
+        </div>
+
+
+        <!-- Gold Rate -->
+        <div class="form-group">
+          <label>Gold Rate (per gram)</label>
+
+          <input
+            type="number"
+            [(ngModel)]="sale.goldRate"
+            (input)="calculateTotal()">
+        </div>
+
+
+        <!-- Weight -->
+        <div class="form-group">
+          <label>Weight (gram)</label>
+
+          <input
+            type="number"
+            placeholder="Enter weight"
+            [(ngModel)]="sale.weight"
+            (input)="calculateTotal()">
+        </div>
+
+
+        <!-- Making Charges -->
+        <div class="form-group">
+          <label>Making Charges (PKR)</label>
+
+          <input
+            type="number"
+            placeholder="Enter making charges"
+            [(ngModel)]="sale.makingCharges"
+            (input)="calculateTotal()">
+        </div>
+
+
+        <!-- Discount -->
+        <div class="form-group">
+          <label>Discount (PKR)</label>
+
+          <input
+            type="number"
+            [(ngModel)]="sale.discount"
+            (input)="calculateTotal()">
+        </div>
+
+
+        <!-- Tax -->
+        <div class="form-group">
+          <label>Tax %</label>
+
+          <input
+            type="number"
+            [(ngModel)]="sale.tax"
+            (input)="calculateTotal()">
+        </div>
+
+
+        <!-- Total -->
+        <div class="total-box">
+
+          <span>Total Amount (PKR)</span>
+
+          <strong>
+            {{ totalAmount | number:'1.2-2' }}
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <!-- Buttons -->
+      <div class="form-actions">
+
+        <button
+          class="cart-btn"
+          (click)="addToCart()">
+
+          <i class="bi bi-cart3"></i>
+          Add to Cart
+
+        </button>
+
+        <button
+          class="reset-btn"
+          (click)="resetForm()">
+
+          <i class="bi bi-arrow-clockwise"></i>
+          Reset
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- Summary -->
+    <div class="summary-card">
+
+      <h2>Today's Summary</h2>
+
+      <div class="summary-item">
+        <span>Total Sales</span>
+        <strong>PKR 245,500</strong>
+      </div>
+
+      <div class="summary-item">
+        <span>Total Transactions</span>
+        <strong>18</strong>
+      </div>
+
+      <div class="summary-item">
+        <span>Total Weight Sold</span>
+        <strong>125.750 gram</strong>
+      </div>
+
+      <div class="summary-item">
+        <span>Average Sale</span>
+        <strong>PKR 13,638.89</strong>
+      </div>
+
+      <button class="report-btn">
+        <i class="bi bi-file-earmark-bar-graph"></i>
+        View Full Report
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- Recent Sales -->
+  <div class="recent-sales">
+
+    <div class="table-header">
+
+      <h2>Recent Sales</h2>
+
+      <div class="table-actions">
+
+        <input type="date">
+
+        <button>
+          <i class="bi bi-funnel"></i>
+          Filters
+        </button>
+
+        <button>
+          <i class="bi bi-download"></i>
+          Export
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- Table -->
+    <div class="table-container">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Invoice No.</th>
+            <th>Date</th>
+            <th>Customer</th>
+            <th>Total Weight</th>
+            <th>Total Amount</th>
+            <th>Payment Type</th>
+            <th>Sales Person</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+
+        <tbody>
+
+          <tr *ngFor="let item of sales">
+
+            <td>{{ item.id }}</td>
+
+            <td>{{ item.invoice }}</td>
+
+            <td>{{ item.date }}</td>
+
+            <td>{{ item.customer }}</td>
+
+            <td>{{ item.weight }} gram</td>
+
+            <td class="amount">
+              PKR {{ item.amount | number }}
+            </td>
+
+            <td>
+              <span
+                class="payment"
+                [class.cash]="item.payment === 'Cash'"
+                [class.card]="item.payment === 'Card'"
+                [class.bank]="item.payment === 'Bank Transfer'">
+
+                {{ item.payment }}
+
+              </span>
+            </td>
+
+            <td>{{ item.salesPerson }}</td>
+
+            <td>
+
+              <div class="actions">
+
+                <button
+                  class="view"
+                  title="View"
+                  (click)="viewSale(item)">
+                  <i class="bi bi-eye"></i>
+                </button>
+
+                <button
+                  class="print"
+                  title="Print"
+                  (click)="printSale(item)">
+                  <i class="bi bi-printer"></i>
+                </button>
+
+                <button
+                  class="delete"
+                  title="Delete"
+                  (click)="deleteSale(item.id)">
+                  <i class="bi bi-trash"></i>
+                </button>
+
+              </div>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+
+    <!-- Pagination -->
+    <div class="pagination">
+
+      <span>
+        Showing 1 to {{ sales.length }} of 52 entries
+      </span>
+
+      <div class="pages">
+
+        <button disabled>Previous</button>
+
+        <button class="active">1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>...</button>
+        <button>11</button>
+
+        <button>Next</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

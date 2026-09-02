@@ -1,0 +1,555 @@
+.sales-page {
+  padding: 25px;
+  background: #f7f8fa;
+  min-height: calc(100vh - 70px);
+}
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-header h1 {
+  margin: 0 0 5px;
+  font-size: 28px;
+  color: #172033;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #7b8494;
+  font-size: 14px;
+}
+
+.breadcrumb i {
+  font-size: 10px;
+}
+
+.breadcrumb .active {
+  color: #198754;
+}
+
+
+.new-sale-btn {
+  border: none;
+  background: #198754;
+  color: white;
+  padding: 11px 20px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.new-sale-btn:hover {
+  background: #157347;
+}
+
+
+/* =========================
+   TOP SECTION
+========================= */
+
+.top-section {
+     display: grid;
+    /* grid-template-columns: 1fr 270px; */
+    gap: 18px;
+    margin-bottom: 20px;
+    /* resize: horizontal; */
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   SALE CARD
+========================= */
+
+.sale-card,
+.summary-card,
+.recent-sales {
+  background: white;
+  border: 1px solid #e3e7ed;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.sale-card h2,
+.summary-card h2,
+.recent-sales h2 {
+  margin: 0 0 20px;
+  font-size: 18px;
+  color: #172033;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #172033;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  height: 40px;
+  border: 1px solid #d7dce3;
+  border-radius: 6px;
+  padding: 0 11px;
+  font-size: 14px;
+  outline: none;
+  background: white;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #198754;
+}
+
+
+/* =========================
+   TOTAL
+========================= */
+
+.total-box {
+  grid-column: span 2;
+  background: #f8fafb;
+  border: 1px solid #dce2e8;
+  border-radius: 6px;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.total-box span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.total-box strong {
+  margin-top: 4px;
+  font-size: 22px;
+  color: #198754;
+}
+
+
+/* =========================
+   FORM BUTTONS
+========================= */
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.cart-btn,
+.reset-btn {
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.cart-btn {
+  border: none;
+  background: #198754;
+  color: white;
+}
+
+.cart-btn:hover {
+  background: #157347;
+}
+
+.reset-btn {
+  border: 1px solid #cbd2da;
+  background: white;
+  color: #172033;
+}
+
+
+/* =========================
+   SUMMARY
+========================= */
+
+.summary-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.summary-item span {
+  color: #737c8c;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.summary-item strong {
+  font-size: 18px;
+  color: #172033;
+}
+
+.summary-item:first-of-type strong {
+  color: #198754;
+  font-size: 21px;
+}
+
+.report-btn {
+  margin-top: auto;
+  border: none;
+  background: #e5f4ea;
+  color: #198754;
+  height: 38px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+/* =========================
+   RECENT SALES
+========================= */
+
+.recent-sales {
+  overflow: hidden;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.table-header h2 {
+  margin: 0;
+}
+
+.table-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.table-actions input,
+.table-actions button {
+  height: 38px;
+  border: 1px solid #d7dce3;
+  background: white;
+  border-radius: 6px;
+  padding: 0 14px;
+  font-size: 13px;
+}
+
+.table-actions button {
+  cursor: pointer;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 950px;
+}
+
+thead {
+  background: #fafbfc;
+}
+
+th,
+td {
+  padding: 14px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e7ebef;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+th {
+  color: #172033;
+  font-weight: 600;
+}
+
+td {
+  color: #3f4856;
+}
+
+.amount {
+  color: #198754;
+  font-weight: 600;
+}
+
+
+/* =========================
+   PAYMENT
+========================= */
+
+.payment {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.payment.cash {
+  background: #e5f4ea;
+  color: #198754;
+}
+
+.payment.card {
+  background: #e8f1ff;
+  color: #2671d9;
+}
+
+.payment.bank {
+  background: #f0eafa;
+  color: #7045b5;
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+.actions {
+  display: flex;
+  gap: 7px;
+}
+
+.actions button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.actions .view {
+  background: #edf5ff;
+  color: #1671e8;
+}
+
+.actions .print {
+  background: #f2f3f5;
+  color: #172033;
+}
+
+.actions .delete {
+  background: #fff0f0;
+  color: #dc3545;
+}
+
+
+/* =========================
+   PAGINATION
+========================= */
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
+  color: #687282;
+  font-size: 13px;
+}
+
+.pages {
+  display: flex;
+  gap: 6px;
+}
+
+.pages button {
+  height: 34px;
+  min-width: 34px;
+  border: 1px solid #d9dee5;
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pages button.active {
+  background: #198754;
+  color: white;
+  border-color: #198754;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+
+  .form-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .top-section {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-card {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+
+  .summary-card h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 5px;
+  }
+
+  .report-btn {
+    margin-top: 0;
+  }
+
+}
+
+
+@media (max-width: 992px) {
+
+  .sales-page {
+    padding: 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .total-box {
+    grid-column: span 2;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .page-header {
+    align-items: flex-start;
+  }
+
+  .page-header h1 {
+    font-size: 24px;
+  }
+
+  .new-sale-btn {
+    padding: 9px 14px;
+  }
+
+  .summary-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .table-actions {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .pagination {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+}
+
+
+@media (max-width: 576px) {
+
+  .sales-page {
+    padding: 15px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .total-box {
+    grid-column: span 1;
+  }
+
+  .summary-card {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .new-sale-btn {
+    width: 100%;
+  }
+
+  .form-actions {
+    width: 100%;
+  }
+
+  .cart-btn,
+  .reset-btn {
+    flex: 1;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .sales-page {
+    padding: 10px;
+  }
+
+  .sale-card,
+  .summary-card,
+  .recent-sales {
+    padding: 15px;
+  }
+
+  .table-actions button {
+    padding: 0 10px;
+  }
+
+}
