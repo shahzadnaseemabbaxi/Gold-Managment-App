@@ -1,4 +1,4 @@
-.navbar {
+/* .navbar {
   background-color: #0d6dce;
   padding: 1rem;
   height: 4rem;
@@ -12,8 +12,10 @@
     align-items: center;
     justify-content: flex-end;
 }
-.right-side a{
+.right-side .nav-link{
     color: black;
+    font-size: 1.2rem;
+    font-weight: 500;
     text-decoration: none;
     margin-right: 1rem;
 }
@@ -24,6 +26,49 @@
   transition: color 0.3s ease;
   cursor: pointer;
 }
+.divider {
+  width: 1.5px;
+  height: 30px;
+  background-color: black;
+  display: inline-block;
+  align-self: center;
+}
+ */
+
+ .navbar {
+  background-color: #0d6dce;
+  padding: 1rem;
+  height: 4rem;
+}
+
+.container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 17rem;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.right-side .nav-link {
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.icons .fa-solid {
+  font-size: 30px;
+  color: #333;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
 /* Divider line */
 .divider {
   width: 1.5px;
@@ -33,3 +78,52 @@
   align-self: center;
 }
 
+/* Hamburger - default hidden on large screens */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+
+  .container-fluid {
+    margin-left: 1rem !important;
+    flex-wrap: nowrap;
+  }
+
+  .hamburger-btn {
+    display: block;
+  }
+
+  .search-form {
+    display: none;
+  }
+
+  .search-form.active {
+    display: flex;
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 10px;
+    z-index: 20;
+  }
+
+  .right-side .nav-link {
+    display: none;
+  }
+
+  .icons .fa-solid {
+    font-size: 22px;
+  }
+
+  .divider {
+    height: 22px;
+  }
+}

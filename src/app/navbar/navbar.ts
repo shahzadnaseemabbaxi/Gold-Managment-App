@@ -1,3 +1,13 @@
+// import { Component } from '@angular/core';
+
+// @Component({
+//   selector: 'app-navbar',
+//   imports: [],
+//   templateUrl: './navbar.html',
+//   styleUrl: './navbar.css',
+// })
+// export class Navbar {}
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,4 +16,10 @@ import { Component } from '@angular/core';
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
-export class Navbar {}
+export class Navbar {
+  isSearchOpen = false;
+
+  toggleSearch() {
+    this.isSearchOpen = !this.isSearchOpen;
+  }
+}
