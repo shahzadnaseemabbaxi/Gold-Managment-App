@@ -1,16 +1,16 @@
 import { Component, HostListener, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Navbar } from './navbar/navbar';
 import { LeftSidebar } from './left-sidebar/left-sidebar';
 import { Main } from "./main/main";
+import { Navbar } from "./navbar/navbar";
 
 @Component({
   selector: 'app-root',
   imports: [
-    Navbar,
     RouterOutlet,
     LeftSidebar,
-    Main
+    Main,
+    Navbar
 ],
   templateUrl: './app.html',
   styleUrl: './app.css'

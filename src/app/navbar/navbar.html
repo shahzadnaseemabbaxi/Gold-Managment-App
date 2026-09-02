@@ -1,63 +1,17 @@
 <nav class="navbar bg-body-tertiary">
-
   <div class="container-fluid">
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <div class="right-side">
+        <div class="icons me-2">
+            <i class="fa-solid fa-bell me-2"></i>
+                <span class="divider me-1"></span>
 
-    <!-- Hamburger -->
-    <button class="menu-btn ">
-      <i class="bi bi-list"></i>
-    </button>
-
-
-    <!-- Search -->
-     <div class="header">
-
-  
-    <div class="search">
-
-      <form class="d-flex">
-
-        <input
-          class="form-control"
-          type="search"
-          placeholder="Search">
-
-        <button
-          class="btn search-btn"
-          type="submit">
-          Search
-        </button>
-
-      </form>
-
+            <i class="fa-solid fa-circle-user"></i>
+        </div>
+      <a class="nav-link" href="#">User Login</a>
     </div>
-       </div>
-
-
-    <!-- Right Side -->
-    <div class="header-right">
-
-      <i class="bi bi-bell"></i>
-
-      <span class="line"></span>
-
-      <i class="bi bi-person-circle"></i>
-      <span>Admin User</span>
-
-      <button [matMenuTriggerFor]="menu">
-        <i class="bi bi-chevron-down"></i>
-      </button>
-      
-      <mat-menu #menu="matMenu">
-        
-        <button mat-menu-item>Edit Profile</button>
-        <button mat-menu-item>View Profile</button>
-        <button mat-menu-item>Billings</button>
-        <button mat-menu-item>Setting</button>
-      </mat-menu>
-
-
-    </div>
-
   </div>
-
 </nav>
