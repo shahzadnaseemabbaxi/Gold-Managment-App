@@ -1,7 +1,8 @@
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
-    <form class="d-flex search-form" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+
+    <form class="d-flex search-form"role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
 
@@ -11,7 +12,19 @@
         <span class="divider me-1"></span>
         <i class="fa-solid fa-circle-user"></i>
       </div>
-      <a class="nav-link">User Login</a>
-    </div>
+      <!-- <a class="nav-link">User Login </a> -->
+
+<button class="button" (click)="showMenu = !showMenu">
+  <i class="fa-solid fa-caret-down"></i>
+
+</button>
+
+<div class="dropdown-menu" [class.show]="showMenu">
+  <a href="#">Profile</a>
+  <a href="#">Change Password</a>
+  <a href="#">Logout</a>
+</div>
+</div>
+
   </div>
 </nav>
