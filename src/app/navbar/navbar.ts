@@ -17,9 +17,4 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.css',
 })
 export class Navbar {
-  isSearchOpen = false;
-
-  toggleSearch() {
-    this.isSearchOpen = !this.isSearchOpen;
-  }
 }

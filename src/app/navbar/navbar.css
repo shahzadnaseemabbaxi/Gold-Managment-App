@@ -1,41 +1,4 @@
-/* .navbar {
-  background-color: #0d6dce;
-  padding: 1rem;
-  height: 4rem;
-}
-.container-fluid {
-  align-items: center;
-  margin-left: 17rem;
-}
-.right-side {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-.right-side .nav-link{
-    color: black;
-    font-size: 1.2rem;
-    font-weight: 500;
-    text-decoration: none;
-    margin-right: 1rem;
-}
-
-.icons .fa-solid{
-     font-size: 30px;
-  color: #333;
-  transition: color 0.3s ease;
-  cursor: pointer;
-}
-.divider {
-  width: 1.5px;
-  height: 30px;
-  background-color: black;
-  display: inline-block;
-  align-self: center;
-}
- */
-
- .navbar {
+.navbar {
   background-color: #0d6dce;
   padding: 1rem;
   height: 4rem;
@@ -69,7 +32,6 @@
   cursor: pointer;
 }
 
-/* Divider line */
 .divider {
   width: 1.5px;
   height: 30px;
@@ -78,52 +40,66 @@
   align-self: center;
 }
 
-/* Hamburger - default hidden on large screens */
-.hamburger-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-}
-
 /* ================= RESPONSIVE ================= */
-@media (max-width: 992px) {
-
-  .container-fluid {
-    margin-left: 1rem !important;
-    flex-wrap: nowrap;
+@media (max-width: 828px) {
+  .form-control {
+    width: 100%;
+    margin-bottom: 0.5rem;
   }
-
-  .hamburger-btn {
-    display: block;
+  .navbar {
+    padding: 0.5rem;
+    height: auto;
   }
-
   .search-form {
     display: none;
+    flex-direction: row;
+    width: 60%;
+    margin-top: 0.5rem;
+    margin-left: 5rem;
   }
-
-  .search-form.active {
-    display: flex;
-    position: absolute;
-    top: 4rem;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    padding: 10px;
-    z-index: 20;
+ .btn {
+    padding: -0.5rem 2rem;
+    height: 2.2rem;
+    padding-bottom: 1.5rem;
   }
-
-  .right-side .nav-link {
+  .container-fluid {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .container-fluid .right-side a {
     display: none;
   }
+}
+@media (max-width: 768px) {
+  .search-form {
+    display: none;
+    flex-direction: row;
+    width: 85%;
+    margin-top: 0.5rem;
+  }
+  .search-form.active {
+    display: flex;
+  }
+}
 
-  .icons .fa-solid {
-    font-size: 22px;
+/* Mobile */
+@media (max-width: 576px) {
+  .search-form {
+    width: 80%;
+    /* margin-left: 2rem; */
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .search-form {
+    width: 70%;
   }
 
-  .divider {
-    height: 22px;
+  .btn {
+    padding: -0.5rem 2rem;
+    height: 2.2rem;
+    padding-bottom: 1.5rem;
   }
 }
