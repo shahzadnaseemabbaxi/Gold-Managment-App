@@ -108,13 +108,9 @@ items = [
     icon: 'fas fa-users',
     label: 'Customers',
   },
+
   {
-    routerLink: 'expenses',
-    icon: 'fas fa-dollar-sign',
-    label: 'Expenses',
-  },
-  {
-    routerLink: 'gold-rates',
+    routerLink: 'goldRate',
     icon: 'fas fa-coins',
     label: 'Gold Rates',
   },
@@ -123,11 +119,7 @@ items = [
     icon: 'fas fa-box-open',
     label: 'Products',
   },
-  {
-    routerLink: 'purchases',
-    icon: 'fas fa-shopping-cart',
-    label: 'Purchases',
-  },
+
   {
     routerLink: 'reports',
     icon: 'fas fa-chart-bar',
@@ -142,11 +134,6 @@ items = [
     routerLink: 'settings',
     icon: 'fas fa-cog',
     label: 'Settings',
-  },
-  {
-    routerLink: 'stocks',
-    icon: 'fas fa-boxes',
-    label: 'Stocks',
   },
   {
     routerLink: 'users-roles',
