@@ -2,6 +2,32 @@
   padding: 25px;
   background: #f7f8fa;
   min-height: calc(100vh - 70px);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  /* andar ka koi input/select parent layout ko chora nahi kar sakta */
+  contain: inline-size;
+}
+
+/* Grid / flex ke bachay kabhi container se bahar na jayen */
+.top-section > *,
+.table-header > *,
+.form-group,
+.summary-item {
+  min-width: 0;
+}
+
+/* Icon + text wale saray buttons ek jaisay */
+.new-sale-btn,
+.cart-btn,
+.reset-btn,
+.report-btn,
+.table-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
 
 
@@ -13,6 +39,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
 .page-header h1 {
@@ -24,6 +53,7 @@
 .breadcrumb {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
   color: #7b8494;
   font-size: 14px;
@@ -37,7 +67,6 @@
   color: #198754;
 }
 
-
 .new-sale-btn {
   border: none;
   background: #198754;
@@ -46,6 +75,7 @@
   border-radius: 6px;
   font-size: 15px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .new-sale-btn:hover {
@@ -58,17 +88,16 @@
 ========================= */
 
 .top-section {
-     display: grid;
-    /* grid-template-columns: 1fr 270px; */
-    gap: 18px;
-    margin-bottom: 20px;
-    /* resize: horizontal; */
-    overflow-x: hidden;
+  display: grid;
+  /* minmax(0, 1fr): andar ka content grid ko kabhi chora nahi karega */
+  grid-template-columns: minmax(0, 1fr) 270px;
+  gap: 18px;
+  margin-bottom: 20px;
 }
 
 
 /* =========================
-   SALE CARD
+   CARDS
 ========================= */
 
 .sale-card,
@@ -78,6 +107,8 @@
   border: 1px solid #e3e7ed;
   border-radius: 8px;
   padding: 20px;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .sale-card h2,
@@ -95,7 +126,7 @@
 
 .form-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 20px 24px;
 }
 
@@ -111,8 +142,14 @@
   font-weight: 500;
 }
 
+.input-icon {
+  width: 100%;
+}
+
 .form-group input,
 .form-group select {
+  width: 100%;
+  max-width: 100%;
   height: 40px;
   border: 1px solid #d7dce3;
   border-radius: 6px;
@@ -121,6 +158,7 @@
   outline: none;
   background: white;
   box-sizing: border-box;
+  text-overflow: ellipsis;
 }
 
 .form-group input:focus,
@@ -142,6 +180,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .total-box span {
@@ -153,6 +193,7 @@
   margin-top: 4px;
   font-size: 22px;
   color: #198754;
+  overflow-wrap: anywhere;
 }
 
 
@@ -162,6 +203,7 @@
 
 .form-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   margin-top: 25px;
 }
@@ -216,6 +258,7 @@
 .summary-item strong {
   font-size: 18px;
   color: #172033;
+  overflow-wrap: anywhere;
 }
 
 .summary-item:first-of-type strong {
@@ -231,6 +274,7 @@
   height: 38px;
   border-radius: 6px;
   cursor: pointer;
+  width: 100%;
 }
 
 
@@ -246,6 +290,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
   margin-bottom: 18px;
 }
 
@@ -255,6 +301,7 @@
 
 .table-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -266,6 +313,7 @@
   border-radius: 6px;
   padding: 0 14px;
   font-size: 13px;
+  box-sizing: border-box;
 }
 
 .table-actions button {
@@ -274,18 +322,22 @@
 
 
 /* =========================
-   TABLE
+   TABLE (desktop)
 ========================= */
 
 .table-container {
   width: 100%;
+  max-width: 100%;
   overflow-x: auto;
+  /* table ki chorai parent (sidebar wale flex layout) ko kabhi bahar nahi dhakelegi.
+     Sath hi @container se andar ka layout asal jagah dekh kar badalta hai */
+  container-type: inline-size;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 950px;
+  min-width: 900px;
 }
 
 thead {
@@ -322,6 +374,7 @@ td {
 
 .payment {
   display: inline-block;
+  white-space: nowrap;
   padding: 5px 10px;
   border-radius: 15px;
   font-size: 12px;
@@ -349,6 +402,7 @@ td {
 
 .actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 7px;
 }
 
@@ -358,6 +412,7 @@ td {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .actions .view {
@@ -384,6 +439,8 @@ td {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
   padding-top: 18px;
   color: #687282;
   font-size: 13px;
@@ -391,6 +448,7 @@ td {
 
 .pages {
   display: flex;
+  flex-wrap: wrap;
   gap: 6px;
 }
 
@@ -401,6 +459,11 @@ td {
   background: white;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.pages button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .pages button.active {
@@ -414,19 +477,21 @@ td {
    RESPONSIVE
 ========================= */
 
+/* ---------- Laptop / chhoti desktop ---------- */
 @media (max-width: 1200px) {
 
   .form-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .top-section {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
+  /* summary: 4 items ek row mein, button neechay poori width */
   .summary-card {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 15px;
   }
 
@@ -435,13 +500,34 @@ td {
     margin-bottom: 5px;
   }
 
+  .summary-item {
+    margin-bottom: 0;
+  }
+
   .report-btn {
+    grid-column: 1 / -1;
     margin-top: 0;
   }
 
+  /* table jagah ke hisab se khud tang ho jaye (text wrap ho), scroll na aaye */
+  table {
+    min-width: 0;
+  }
+
+  th,
+  td {
+    padding: 12px 8px;
+    white-space: normal;
+  }
+
+  .payment,
+  .amount {
+    white-space: nowrap;
+  }
 }
 
 
+/* ---------- Tablet ---------- */
 @media (max-width: 992px) {
 
   .sales-page {
@@ -449,12 +535,77 @@ td {
   }
 
   .form-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .total-box {
     grid-column: span 2;
   }
+
+  /* -------- TABLE -> har row ek chhota card (koi horizontal scroll nahi) -------- */
+  .table-container {
+    overflow-x: visible;
+  }
+
+  table,
+  tbody,
+  tr,
+  td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  table {
+    min-width: 0;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    background: white;
+    border: 1px solid #e3e7ed;
+    border-radius: 8px;
+    padding: 6px 14px;
+    margin-bottom: 12px;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px dashed #e7ebef;
+    white-space: normal;
+    text-align: right;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  td:last-child {
+    border-bottom: none;
+  }
+
+  td::before {
+    flex-shrink: 0;
+    color: #737c8c;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: left;
+  }
+
+  td:nth-child(1)::before { content: "#"; }
+  td:nth-child(2)::before { content: "Invoice No."; }
+  td:nth-child(3)::before { content: "Date"; }
+  td:nth-child(4)::before { content: "Customer"; }
+  td:nth-child(5)::before { content: "Total Weight"; }
+  td:nth-child(6)::before { content: "Total Amount"; }
+  td:nth-child(7)::before { content: "Payment Type"; }
+  td:nth-child(8)::before { content: "Sales Person"; }
+  td:nth-child(9)::before { content: "Actions"; }
 
 }
 
@@ -474,18 +625,27 @@ td {
   }
 
   .summary-card {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .table-header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 15px;
   }
 
+  /* date box poori width, buttons neechay barabar */
   .table-actions {
     width: 100%;
-    overflow-x: auto;
+  }
+
+  .table-actions input {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .table-actions button {
+    flex: 1 1 0;
   }
 
   .pagination {
@@ -497,6 +657,7 @@ td {
 }
 
 
+/* ---------- Mobile ---------- */
 @media (max-width: 576px) {
 
   .sales-page {
@@ -504,7 +665,8 @@ td {
   }
 
   .form-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
   }
 
   .total-box {
@@ -512,11 +674,12 @@ td {
   }
 
   .summary-card {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .page-header {
     flex-direction: column;
+    align-items: stretch;
     gap: 15px;
   }
 
@@ -530,12 +693,13 @@ td {
 
   .cart-btn,
   .reset-btn {
-    flex: 1;
+    flex: 1 1 120px;
   }
 
 }
 
 
+/* ---------- Chhota mobile ---------- */
 @media (max-width: 480px) {
 
   .sales-page {
@@ -548,8 +712,120 @@ td {
     padding: 15px;
   }
 
-  .table-actions button {
-    padding: 0 10px;
+  .page-header h1 {
+    font-size: 22px;
   }
 
+  .pages button {
+    padding: 0 8px;
+  }
+
+}
+
+
+/* ---------- 320px tak ---------- */
+@media (max-width: 360px) {
+
+  .sales-page {
+    padding: 8px;
+  }
+
+  .sale-card,
+  .summary-card,
+  .recent-sales {
+    padding: 12px;
+  }
+
+  .sale-card h2,
+  .summary-card h2,
+  .recent-sales h2 {
+    font-size: 16px;
+    margin-bottom: 14px;
+  }
+
+  .page-header h1 {
+    font-size: 20px;
+  }
+
+  .breadcrumb {
+    font-size: 12px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .total-box strong {
+    font-size: 20px;
+  }
+
+  .summary-item strong,
+  .summary-item:first-of-type strong {
+    font-size: 16px;
+  }
+
+  /* dono buttons upar-neechay poori width */
+  .cart-btn,
+  .reset-btn {
+    flex: 1 1 100%;
+  }
+
+  tbody tr {
+    padding: 4px 10px;
+  }
+
+  .payment {
+    white-space: normal;
+    text-align: center;
+  }
+
+  td {
+    font-size: 12px;
+  }
+
+  .pages button {
+    height: 32px;
+    min-width: 30px;
+    padding: 0 6px;
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================
+   TANG JAGAH (sidebar + padding ke baad jitni jagah bachay)
+   Table ke dabbay ki asal width 360px se kam ho to
+   label upar aur value neechay aati hai, kuch bhi katta nahi
+========================= */
+@container (max-width: 360px) {
+
+  tbody tr {
+    padding: 4px 10px;
+  }
+
+  td {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 3px;
+    padding: 8px 0;
+    text-align: left;
+  }
+
+  td::before {
+    font-size: 11px;
+  }
+
+  .payment {
+    white-space: normal;
+    text-align: center;
+    overflow-wrap: break-word;
+  }
+}
+
+@media (max-width: 576px) {
+  .recent-sales {
+    padding: 10px;
+  }
 }
