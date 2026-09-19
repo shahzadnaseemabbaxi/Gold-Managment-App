@@ -103,16 +103,22 @@ items = [
     icon: 'fas fa-home',
     label: 'Dashboard',
   },
-  {
-    routerLink: 'customers',
-    icon: 'fas fa-users',
-    label: 'Customers',
-  },
+
 
   {
     routerLink: 'goldRate',
     icon: 'fas fa-coins',
     label: 'Gold Rates',
+  },
+    {
+    routerLink: 'sales',
+    icon: 'fas fa-cash-register',
+    label: 'Sales',
+  },
+    {
+    routerLink: 'customers',
+    icon: 'fas fa-users',
+    label: 'Customers',
   },
   {
     routerLink: 'products',
@@ -125,11 +131,7 @@ items = [
     icon: 'fas fa-chart-bar',
     label: 'Reports',
   },
-  {
-    routerLink: 'sales',
-    icon: 'fas fa-cash-register',
-    label: 'Sales',
-  },
+
   {
     routerLink: 'settings',
     icon: 'fas fa-cog',
